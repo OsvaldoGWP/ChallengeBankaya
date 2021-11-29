@@ -1,6 +1,6 @@
 # SERVER CONFIG
 server:
-    port: 8081
+    port: 8080
 
 logging:
     level:
@@ -8,3 +8,11 @@ logging:
         web: DEBUG
         org.springframework.ws.server.MessageTracing.received: TRACE
         com.bankaya: DEBUG
+
+feign:
+    client.config:
+        default:
+            logger-level: FULL
+
+api:
+    pokemon: https://pokeapi.co/api/v2
