@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.bankaya.challenge.repository.RequestHistoryRepository">
+
+    <resultMap id="requestHistoryRM" type="RequestHistory" autoMapping="true">
+        <id column="id" property="id"/>
+    </resultMap>
+
+    <select id="save" parameterType="RequestHistory" resultMap="requestHistoryRM" resultType="RequestHistory">
+        INSERT INTO request_history (method, source_ip, request_date,
+                                     successful, request)
+        VALUES (#{method}, #{sourceIp}, #{requestDate},
+                #{successful}, #{request})
+        RETURNING *
+    </select>
+
+</mapper>

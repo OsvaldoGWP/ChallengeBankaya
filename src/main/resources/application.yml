@@ -3,7 +3,20 @@ server:
     port: 8080
 
 spring:
+
+    # DATABASE CONFIG
+    datasource:
+        url: jdbc:postgresql://localhost:5432/bankaya-challenge
+        username: postgres
+        password: postgres
+
     cache.jcache.config: classpath:config/ehcache.xml
+
+mybatis:
+    type-aliases-package: com.bankaya.challenge.model
+    mapper-locations: mybatis/*Mapper.xml
+    configuration:
+        map-underscore-to-camel-case: true
 
 logging:
     level:

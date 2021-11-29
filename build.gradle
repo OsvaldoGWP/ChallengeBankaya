@@ -22,11 +22,15 @@ repositories {
 
 ext {
     set('springCloudVersion', "2021.0.0-RC1")
+    set('mybatisVersion', '2.2.0')
 }
 
 dependencies {
+
+    runtimeOnly 'org.postgresql:postgresql'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}"
 
     //Dependencies for web-service - start
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
