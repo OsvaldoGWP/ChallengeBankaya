@@ -1,4 +1,5 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://bankaya.com/challenge/gen"
            targetNamespace="http://bankaya.com/challenge/gen" elementFormDefault="qualified">
 
     <xs:element name="getIdRequest">
@@ -16,5 +17,67 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+    <xs:element name="getAbilityListRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getAbilityListResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="abilities" type="tns:AbilityResponse" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="AbilityResponse">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="getBaseExperienceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBaseExperienceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="baseExperience" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLocationAreaEncountersRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getLocationAreaEncountersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="encounters" type="tns:LocationAreaEncounterResponse" minOccurs="0"
+                            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="LocationAreaEncounterResponse">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
 
 </xs:schema>
