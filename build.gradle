@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id "org.flywaydb.flyway" version "8.1.0"
+    id 'jacoco'
 }
 
 group = 'com.bankaya'
@@ -101,4 +102,12 @@ flyway {
     user = 'postgres'
     password = 'postgres'
     locations = ['filesystem:scripts']
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['**/ChallengeApplication.class'])
+        }))
+    }
 }

@@ -53,7 +53,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
         // register global interceptor
         interceptors.add(globalEndpointInterceptor);
-
     }
 
 }
