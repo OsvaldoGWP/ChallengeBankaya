@@ -2,11 +2,15 @@
 server:
     port: 8080
 
+spring:
+    cache.jcache.config: classpath:config/ehcache.xml
+
 logging:
     level:
         ROOT: INFO
         web: DEBUG
         org.springframework.ws.server.MessageTracing.received: TRACE
+        org.springframework.cache: TRACE
         com.bankaya: DEBUG
 
 feign:

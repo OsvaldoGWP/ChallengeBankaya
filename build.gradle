@@ -36,6 +36,12 @@ dependencies {
 
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
+    //Dependencies for cache - start
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    implementation 'javax.cache:cache-api'
+    implementation 'org.ehcache:ehcache'
+    //Dependencies for cache - end
+
     //Dependencies removed from Java 11
     runtimeOnly 'javax.xml.bind:jaxb-api'
     runtimeOnly 'org.glassfish.jaxb:jaxb-runtime'
