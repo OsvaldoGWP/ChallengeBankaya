@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.6.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id "org.flywaydb.flyway" version "8.1.0"
 }
 
 group = 'com.bankaya'
@@ -93,4 +94,11 @@ compileJava.dependsOn genJaxb
 
 test {
     useJUnitPlatform()
+}
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/bankaya-challenge'
+    user = 'postgres'
+    password = 'postgres'
+    locations = ['filesystem:scripts']
 }
