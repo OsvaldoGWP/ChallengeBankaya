@@ -1,1 +1,10 @@
+# SERVER CONFIG
+server:
+    port: 8081
 
+logging:
+    level:
+        ROOT: INFO
+        web: DEBUG
+        org.springframework.ws.server.MessageTracing.received: TRACE
+        com.bankaya: DEBUG
