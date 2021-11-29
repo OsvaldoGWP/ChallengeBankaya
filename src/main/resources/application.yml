@@ -22,9 +22,12 @@ logging:
     level:
         ROOT: INFO
         web: DEBUG
+        tx: DEBUG
         org.springframework.ws.server.MessageTracing.received: TRACE
         org.springframework.cache: TRACE
         com.bankaya: DEBUG
+
+    group.tx: org.mybatis.spring, org.springframework.jdbc.support.JdbcTransactionManager'
 
 feign:
     client.config:
